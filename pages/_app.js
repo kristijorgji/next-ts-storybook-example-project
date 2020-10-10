@@ -1,5 +1,6 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import Light from "../styles/themes/Light/Light";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -9,17 +10,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const theme = {
-  colors: {
-    primary: '#eaf35c',
-  },
-};
-
 export default function App({ Component, pageProps }) {
   return (
       <>
         <GlobalStyle />
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={Light}>
           <Component {...pageProps} />
         </ThemeProvider>
       </>

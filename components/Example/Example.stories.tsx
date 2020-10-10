@@ -1,6 +1,9 @@
-import { storiesOf } from "@storybook/react";
+import {storiesOf} from "@storybook/react";
 import Example from './Example';
+import StoryWrapper from "../../.storybook/StoryWrapper";
 
-storiesOf("Button", module).add("with text", () => {
-    return <Example text="Hello World" />;
+storiesOf("Example", module).add("with text", () => {
+    return <StoryWrapper>
+        <Example text="Hello World"/>
+    </StoryWrapper>;
 });
