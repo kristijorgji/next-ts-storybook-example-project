@@ -10,7 +10,7 @@ const getTheme = (theme?: string) => {
     }
 };
 
-type Props = {
+interface Props {
     theme?: string
 }
 

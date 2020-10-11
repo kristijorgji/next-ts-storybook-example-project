@@ -1,6 +1,6 @@
 import {ExampleWrapper} from "./Example.style";
 
-type Props = {
+interface Props {
     text?: string;
 };
 
