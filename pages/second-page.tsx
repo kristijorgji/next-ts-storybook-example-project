@@ -1,21 +1,17 @@
-import { withTranslation, Link } from '../i18n'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
+import { withTranslation } from '../i18n'
 import {NextPageProps} from "../types/NextPageProps";
+import Head from "next/dist/next-server/lib/head";
 
 const SecondPage = ({ t }: NextPageProps) => (
     <>
+        <Head>
+            <title>Second Page</title>
+        </Head>
         <main>
-            <Header title={t('h1')} />
-            <Link href='/'>
-                <button
-                    type='button'
-                >
-                    {t('back-to-home')}
-                </button>
-            </Link>
+            <div>
+                <h1>{t('h1')}</h1>
+            </div>
         </main>
-        <Footer />
     </>
 );
 

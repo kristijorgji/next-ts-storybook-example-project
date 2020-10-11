@@ -1,5 +1,9 @@
 ## Demo project
-It includes
+I try to create here a full inclusive demo project, properly organised for production ready.
+
+This simple demo is one small blog with localisation, routing.
+
+It includes the following added features/configurations
 - next.js
 - typescript
 - storybook
@@ -10,7 +14,7 @@ It includes
 
 ## Getting Started
 
-First, run the development server:
+### Running the development server
 
 ```bash
 npm run dev
@@ -18,23 +22,38 @@ npm run dev
 yarn dev
 ```
 
-Run storybook by executing in terminal:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+### Using storybook
 
 ```bash
 yarn storybook
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Export static site
+
+```bash
+yarn export
+```
+
+Then all the generated html files will be out in the `out` folder
 
 
-## Learn More
+### Start production server
 
-To learn more about Next.js, take a look at the following resources:
+First is recommended to prerender anything for performance reason like
+```bash
+yarn build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then run 
+```bash
+yarn start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The above command starts the prod server that will serve your next.js app.
+
 
 ## Licence
 
