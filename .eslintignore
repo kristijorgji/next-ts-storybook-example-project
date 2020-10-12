@@ -1,0 +1,9 @@
+build/**
+public/**
+out/**
+.next/**
+node_modules/**
+
+.scannerwork
+*.md
+*.snap

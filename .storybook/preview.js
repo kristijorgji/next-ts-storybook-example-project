@@ -1,2 +1,2 @@
 // Import global css here
-import "../styles/globals.scss";
+import "../src/styles/globals.scss";

@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {ThemeProvider} from 'styled-components';
-import Light from "../styles/themes/Light/Light";
+import Light from "../src/styles/themes/Light/Light";
 
 
 const getTheme = (theme?: string) => {
