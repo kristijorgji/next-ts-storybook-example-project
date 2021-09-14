@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Demo by @kristijorgji - Index Page",
+  "greetLogged": "Hello {{userId}}",
+  "greetGuest": "Hello guest"
+}

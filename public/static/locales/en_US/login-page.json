@@ -1,0 +1,7 @@
+{
+  "pageTitle": "Login",
+  "wrongCredentials": "Wrong credentials",
+  "emailLabel": "Email",
+  "passwordLabel": "Password",
+  "loginBtn": "Login"
+}

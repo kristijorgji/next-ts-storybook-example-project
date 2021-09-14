@@ -1,28 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
-import Example from '../components/Example/Example';
-import { withTranslation } from '../i18n';
+import { SSRConfig, withTranslation } from 'next-i18next';
 import { NextPageProps } from '../types/NextPageProps';
+import { GetStaticPropsContext, GetStaticPropsResult } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { DEFAULT_LOCALE } from '../constants';
+import { UserContext } from '../context/UserContext';
 
-const Home = ({ t }: NextPageProps) => {
+const Index = ({ t }: NextPageProps) => {
+    const { user } = useContext(UserContext);
+
     return (
         <>
             <Head>
-                <title>Demo</title>
+                <title>{t('index-page:pageTitle')}</title>
             </Head>
-            <main className={styles.main}>
-                <div className={styles.container}>
-                    <h1 className={styles.title}>{t('h1')}</h1>
-                    <Example />
-                </div>
-            </main>
+            {user && user.isLoggedIn && user.user && <div>{t('index-page:greetLogged', { userId: user.user.id })}</div>}
+            {user && !user.isLoggedIn && <div>{t('index-page:greetGuest')}</div>}
         </>
     );
 };
 
-Home.getInitialProps = async () => ({
-    namespacesRequired: ['common', 'footer'],
-});
+const tNamespaces = ['header', 'footer', 'index-page'];
+export async function getStaticProps({ locale }: GetStaticPropsContext): Promise<GetStaticPropsResult<SSRConfig>> {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale || DEFAULT_LOCALE, tNamespaces)),
+        },
+    };
+}
 
-export default withTranslation('common')(Home);
+export default withTranslation(tNamespaces)(Index as React.FC);

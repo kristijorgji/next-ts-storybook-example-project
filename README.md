@@ -10,7 +10,15 @@ It includes the following added features/configurations
 - int18
 - sass support
 - styled components
+- login, session, protected routes system
+- layout for guest/logged in user, custom layout per page
+- internationalized routing - different urls for different locales (see `routes.js`)
 
+To login in the demo login page use these credentials:
+```
+email: k@test.com
+password: test
+```
 
 ## Getting Started
 

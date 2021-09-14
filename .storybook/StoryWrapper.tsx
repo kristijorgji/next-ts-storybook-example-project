@@ -14,7 +14,7 @@ interface Props {
     theme?: string
 }
 
-const Example: React.FunctionComponent<Props> = (props) => (
+const StoryWrapper: React.FC<Props> = (props) => (
     <ThemeProvider theme={getTheme(props.theme)}>
         <Fragment>
             {props.children}
@@ -22,4 +22,4 @@ const Example: React.FunctionComponent<Props> = (props) => (
     </ThemeProvider>
 );
 
-export default Example;
+export default StoryWrapper;

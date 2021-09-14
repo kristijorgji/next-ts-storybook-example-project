@@ -15,7 +15,6 @@ module.exports = {
         'plugin:import/typescript',
 
         // Prettier plugin and recommended rules
-        'prettier/@typescript-eslint',
         'plugin:prettier/recommended',
     ],
     rules: {
@@ -23,6 +22,7 @@ module.exports = {
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
 
         'react/prop-types': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
     },
     settings: {
         'import/extensions': ['.js', '.jsx', '.tsx', '.ts'],

@@ -15,7 +15,7 @@ module.exports = {
         // TypeScript
         newConfig.module.rules.push({
             test: /\.(ts|tsx)$/,
-            include: [path.resolve(__dirname, '../components')],
+            include: [path.resolve(__dirname, '../src/components')],
             use: [
                 {
                     loader: 'babel-loader',
@@ -32,7 +32,7 @@ module.exports = {
         newConfig.module.rules.push({
             test: /\.(s*)css$/,
             loaders: ['style-loader', 'css-loader', 'sass-loader'],
-            include: path.resolve(__dirname, '../styles/globals.scss'),
+            include: path.resolve(__dirname, '../src/styles/globals.scss'),
         });
 
         // If you are using CSS Modules, check out the setup from Justin (justincy)
