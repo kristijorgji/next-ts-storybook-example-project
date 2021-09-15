@@ -5,6 +5,8 @@ import { Router, withRouter } from 'next/router';
 import Link from '../../../core/Link/Link';
 import { getRouteSource } from '../../../getRouteSource';
 import { AppUser } from '../../../types/common';
+import { setCookie } from '../../../utils/cookies';
+import { LOCALE_COOKIE_NAME } from '../../../constants';
 
 interface Props {
     readonly t: TFunction;
@@ -26,6 +28,7 @@ const Header: React.FC<Props> = (p) => {
                 { locale: language }
             );
         });
+        setCookie(LOCALE_COOKIE_NAME, language, 365);
     };
 
     return (

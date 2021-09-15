@@ -9,3 +9,5 @@ export const sessionConfig = {
         maxAge: 3600 * 24,
     },
 };
+
+export const LOCALE_COOKIE_NAME = 'NEXT_LOCALE';
